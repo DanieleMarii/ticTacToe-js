@@ -1,7 +1,7 @@
 let x = document.querySelector(".x");
 let o = document.querySelector(".o");
 let boxes = document.querySelectorAll('.box');
-let buttons = document.querySelectorAll('#buttons-container');
+let buttons = document.querySelectorAll('#buttons-container button');
 let messageContainer = document.querySelector("#message");
 let messageText = document.querySelector("#message p");
 let secondPlayer;
@@ -25,6 +25,11 @@ for (let i = 0; i < boxes.length; i++){
             // computar jogada
             if (player1 == player2) {
               player1++;
+              if(secondPlayer == 'ai-player') {
+                // função executar jogada
+                computerPlay()
+                player2++;
+              }
             } else {
               player2++;
             }
@@ -33,6 +38,21 @@ for (let i = 0; i < boxes.length; i++){
           checkWinCondition();
         }
     });
+}
+
+// evento para definir se são 2 player ou ia
+for (let i = 0; i < buttons.length; i++){
+  buttons[i].addEventListener("click", function () {
+    secondPlayer = this.getAttribute("id");
+    for (j = 0; j < buttons.length; j++){
+      buttons[j].style.display = 'none';
+    }
+
+    setTimeout(function () {
+      let container = document.querySelector('#container');
+      container.classList.remove("hide");
+    }, 500)
+  })
 }
 
 // verifica de quem é a vez
@@ -225,4 +245,31 @@ function declareWinner(winner) {
   for (let i = 0; i < boxesToRemove.length; i++){
     boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
   }
+}
+
+// executar a logica jogada do cpu
+function computerPlay() {
+  let cloneO = o.cloneNode(true);
+  counter = 0;
+  filled = 0;
+
+  for (let i = 0; i < boxes.length; i++){
+    let randomNumber = Math.floor(Math.random() * 5);
+    // só preencher se estiver vazio o filho
+    if (boxes[i].childNodes[0] == undefined) {
+      if (randomNumber <= 1) {
+        boxes[i].appendChild(cloneO);
+        counter++;
+        break;
+      }
+    // checagem de quantas estão preenchidas
+    } else {
+      filled++;
+    }
+  }
+
+  if (counter == 0 && filled < 9) {
+    computerPlay();
+  }
+    
 }

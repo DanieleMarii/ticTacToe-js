@@ -258,8 +258,10 @@ function computerPlay() {
     // só preencher se estiver vazio o filho
     if (boxes[i].childNodes[0] == undefined) {
       if (randomNumber <= 1) {
-        boxes[i].appendChild(cloneO);
-        counter++;
+        setTimeout(function () {
+          boxes[i].appendChild(cloneO); 
+        }, 400) 
+         counter++;
         break;
       }
     // checagem de quantas estão preenchidas

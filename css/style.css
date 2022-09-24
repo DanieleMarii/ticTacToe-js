@@ -1,6 +1,25 @@
 body{
+    background-color: #264653;
     text-align: center;
-    font-family: Helvetiva, sans-serif;
+    font-family: 'Dangrek', cursive;
+}
+
+header{
+    margin: 25px 0;
+}
+
+header span{
+    font-size: 50px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.x-header{
+    color: #35BAAA;
+}
+
+.o-header{
+    color: #fdca47;
 }
 
 h1{
@@ -10,11 +29,24 @@ h1{
 /* botões */
 
 #buttons-container button{
+    font-size: 15px;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
     border: none;
     padding: 10px 15px;
-    margin: 0 10px;
+    margin: 8px 10px;
 }
 
+.two-players{
+    background-color: #fdca47;
+    box-shadow: 0 7px 0 #d89c05;
+}
+
+#ai-player{
+    background-color: #35BAAA;
+    box-shadow: 0 7px 0 #068677;
+}
 /* jogo */
 
 #container{
@@ -55,7 +87,7 @@ h1{
 
 .x{
     font-size: 65px;
-    color: red;
+    color: #35BAAA;
     display: inline-block;
     line-height: 100px;
 }
@@ -63,7 +95,7 @@ h1{
 .o{
     width: 50px;
     height: 50px;
-    border: 5px solid green;
+    border: 5px solid #fdca47;
     border-radius: 50%;
     display: inline-block;
     margin-top: 17px;

@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
     <title>Tic tac toe</title>
 </head>
 <body>
-    <h1>Jogo da velha</h1>
+
+    <header>
+        <span class="x-header">X</span>
+        <span class="o-header">O</span>
+    </header>
+
     <div id="buttons-container">
-        <button id="2-players">2 Jogadores</button>
-        <button id="ai-player">Contra IA</button>
+        <button id="2-players" class="two-players">NEW GAME (VS PLAYER)</button>
+        </br>
+        <button id="ai-player">NEW GAME (VS CPU)</button>
     </div>
 
     <div id="container" class="hide">

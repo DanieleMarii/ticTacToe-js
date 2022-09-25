@@ -5,7 +5,7 @@ body{
 }
 
 header{
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
 header span{
@@ -97,12 +97,10 @@ h1{
 }
 
 .o{
-    width: 50px;
-    height: 50px;
-    border: 5px solid #fdca47;
-    border-radius: 50%;
+    font-size: 65px;
+    color: #35BAAA;
     display: inline-block;
-    margin-top: 17px;
+    line-height: 100px;
 }
 
 /* classe de esconder */
@@ -112,8 +110,46 @@ h1{
 }
 
 /* placar */
+
 #scoreboard-container{
-    margin-top: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 25px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.score-box{
+    margin: 0 20px;
+}
+
+#x-scoreboard{
+    font-weight: 400;
+    color: #1a2a33;
+}
+
+#o-scoreboard{
+    font-weight: 400;
+    color: #1a2a33;
+}
+
+/* mensagem vitoria */
+
+#message p {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    width: 500px;
+    font-size: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    /* display: none; */
+}
+
+#scoreboard-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -121,7 +157,7 @@ h1{
 
 .score-box{
     margin-bottom: 5px;
-    width: 110px;
+    width: 120px;
     height: 70px;
     background-color: white;
     border-radius: 10px;
@@ -139,50 +175,4 @@ h1{
 .score-box > span{
     
     color: #1a2a33;
-}
-.score-box{
-    margin: 0 20px;
-}
-
-#x-scoreboard{
-    font-weight: 400;
-    color: #1a2a33;
-}
-
-#o-scoreboard{
-    font-weight: 400;
-    color: #1a2a33;
-}
-
-/* mensagem vitoria */
-
-#message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 150px;
-    width: 100%;
-    height: 50%;
-    background-color: #1f3641;
-    padding: 20px;
-}
-
-#message p{
-    font-size: 50px;
-}
-
-.winO{
-    color: #fdca47;
-}
-
-.winX{
-    color: #35BAAA;
-}
-
-.over{
-    color: #a8bfc9;
 }

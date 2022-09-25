@@ -218,15 +218,32 @@ function declareWinner(winner) {
 
   if (winner == 'x') {
     scoreBoardX.textContent = parseInt(scoreBoardX.textContent) + 1;
-    msg= 'O jogador 1 venceu!'
+    msg= 'X takes the round'
   } else if (winner == 'o') {
     scoreBoardY.textContent = parseInt(scoreBoardY.textContent) + 1;
-    msg = "O jogador 2 venceu!";
+    msg = "O takes the round";
   } else {
-    msg = "Deu velha!"
+    msg = "ROUND TIED";
   }
 
   // exibe mensagem
+
+  if(winner == 'x'){
+    messageText.classList.add('winX')
+    setTimeout(function(){
+      messageText.classList.remove('winX')
+    }, 2000)
+  } else if (winner == 'o'){
+    messageText.classList.add('winO')
+    setTimeout(function(){
+      messageText.classList.remove('winO')
+    }, 2000)
+  } else{
+    messageText.classList.add('over')
+    setTimeout(function(){
+      messageText.classList.remove('over')
+    }, 2000)
+  }
 
   messageText.innerHTML = msg;
   messageContainer.classList.remove('hide')
@@ -235,6 +252,7 @@ function declareWinner(winner) {
   setTimeout(function () {
     messageContainer.classList.add('hide');
   }, 2000);
+
 
   // zera as jogadas
   player1 = 0;
